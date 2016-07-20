@@ -1,0 +1,35 @@
+<h1>Jobs#index</h1>
+<p>Find me in app/views/jobs/index.html.erb</p>
+
+<br>
+<br>
+<% if @boat.jobs %>
+  <% @boat.jobs.each do |job|%>
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= job.name %></td>
+      <br>
+      <br>
+    <td><strong>Cost:</strong></td>
+    <td><%= job.cost %></td>
+      <br>
+      <br>
+    <td><strong>Name:</strong></td>
+    <td><%= job.description %></td>
+      <br>
+      <br>
+    <td><strong>Name:</strong></td>
+    <td><%= job.origin %></td>
+      <br>
+      <br>
+    <td><strong>Name:</strong></td>
+    <td><%= job.destination %></td>
+      <br>
+      <br>
+    <td><button><%= link_to 'Delete', boat_job_path(@boat), method: :delete  %></button></td>
+ </tr>
+ <% end %>
+<% end %>
+<br>
+<br>
+<button><%= link_to 'Profile', user_path(current_user) %></button>

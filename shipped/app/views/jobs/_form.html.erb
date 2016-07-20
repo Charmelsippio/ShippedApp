@@ -1,0 +1,23 @@
+
+
+<%= form_for [@boat, @job] do |f| %>
+  <%= f.text_field :name, placeholder: 'Name' %>
+  <br>
+  <br>
+  <%= f.text_field :cost, placeholder: 'Cost' %>
+  <br>
+  <br>
+  <%= f.text_field :description, placeholder: 'Description' %>
+  <br>
+  <br>
+  <%= f.text_field :origin, placeholder: 'Origin' %>
+  <br>
+  <br>
+  <%= f.text_field :destination, placeholder: 'Destination' %>
+  <br>
+  <br>
+  <%= f.hidden_field :boat_id, :value => @boat.id %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>

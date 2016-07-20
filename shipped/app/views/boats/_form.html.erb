@@ -1,0 +1,15 @@
+<%= form_for @boat do |f| %>
+  <strong>Name:</strong>
+  <%= f.text_field :name, placeholder: 'Name:' %>
+  <br>
+  <br>
+  <strong>Number of containers:</strong>
+  <%= f.text_field :containers, placeholder: 'Containers:' %>
+  <br>
+  <br>
+  <strong>Location:</strong>
+  <%= f.text_field :location, placeholder: 'Location:' %>
+  <br>
+  <br>
+  <%= f.submit 'Submit'%>
+<% end %>

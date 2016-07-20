@@ -1,0 +1,54 @@
+<h2>Users Show page</h2>
+
+<div id="user_info">
+  <strong>Your account info:</strong>
+  <br>  
+  <br>
+  <strong>Name:</strong>
+  <%= @user.name %>
+  <br>
+  <br>
+  <strong>Username:</strong>
+  <%= @user.username %>
+  <br>
+  <br>
+  <td><button><%= link_to 'Edit', edit_user_path %></button></td>
+</div>
+
+  <br>
+  <br>
+
+
+<button><%= link_to 'Add a boat', new_boat_path %></button>
+<br>
+<br>
+<div id="boats_info">
+<% if @boats.present? %>
+    <% @boats.each do |boat| %>
+      <tr>
+        <td><strong>Boat:</strong></td>
+        <td><%= boat.name %></td>
+        <br>
+        <br>
+        <td><strong>Number of Containers:</strong></td>
+        <td><%= boat.containers %></td>
+        <br>
+        <br>
+        <td><strong>Location:</strong></td>
+        <td><%= boat.location %></td>
+        <br>
+        <br>
+        <td><button><%= link_to 'Add Job', new_boat_job_path(boat) %></button></td>
+        <td><button><%= link_to 'View Jobs', boat_jobs_path(boat) %></button></td>
+        <td><button><%= link_to 'Edit', edit_boat_path(boat)%></button></td>
+        <td><button><%= link_to 'Delete', boat_path(boat), method: :delete  %></button></td>
+        <br>
+        <br>
+        <br>
+        <br>
+      </tr>
+    <% end %>
+  <% end %>
+</div>
+
+  <button><%= link_to 'Log Out', log_out_path %></button>
